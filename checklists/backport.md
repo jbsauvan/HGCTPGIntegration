@@ -1,8 +1,8 @@
 - Install the working area
 ```bash
 # first export the correct SCRAM_ARCH
-cmsrel CMSSW_12_5_2_patch1
-cd CMSSW_12_5_2_patch1/src
+cmsrel CMSSW_16_0_1
+cd CMSSW_16_0_1/src
 cmsenv
 ```
 - Checkout the release branch
@@ -16,7 +16,7 @@ git checkout -b BRANCH_NAME
 - Add `hgc-tpg` remote and fetch the development branch
 ```bash
 git remote add hgctpg git@github.com:hgc-tpg/cmssw.git
-git fetch hgctpg hgc-tpg-devel-CMSSW_14_0_0_pre1
+git fetch hgctpg hgc-tpg-devel-CMSSW_16_1_0_pre2
 ```
 - Cherry-pick the commit to be backported
 ```bash

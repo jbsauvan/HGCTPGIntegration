@@ -20,12 +20,12 @@ Development branches are based on CMSSW pre-releases and meant to be used primar
 
 Development branches should follow to some extent the evolution of the CMSSW pre-releases, although the creation of a new development branch is in general not necessary for every CMSSW pre-release. 
 
-Development branch names follow the pattern `hgc-tpg-devel-$CMSSW_VERSION` where `$CMSSW_VERSION` is the CMSSW version name, for instance `hgc-tpg-devel-CMSSW_14_0_0_pre1`. :warning: The PR validation scripts extract the release version from the branch name, so this pattern must be respected for the validation to work.
+Development branch names follow the pattern `hgc-tpg-devel-$CMSSW_VERSION` where `$CMSSW_VERSION` is the CMSSW version name, for instance `hgc-tpg-devel-CMSSW_16_1_0_pre2. :warning: The PR validation scripts extract the release version from the branch name, so this pattern must be respected for the validation to work.
 
 ### Release branches
 Release branches are based on stable CMSSW releases and meant to be used by users for performance studies. Similarly as for development branches, new release branches are created to follow new CMSSW stable releases. But contrary to development branches, there can be more than one release branch being used at a given time. It can happen if an older CMSSW version is required to run on some set of samples (e.g. because of deprecated geometries being used in those samples), and a newer CMSSW version is used to run on more recent samples.
 
-Release branch names follow the pattern `hgc-tpg-$CMSSW_VERSION` where `$CMSSW_VERSION` is the CMSSW version name, for instance `hgc-tpg-CMSSW_12_5_2_patch1`. :warning: The PR validation scripts extract the release version from the branch name, so this pattern must be respected for the validation to work.
+Release branch names follow the pattern `hgc-tpg-$CMSSW_VERSION` where `$CMSSW_VERSION` is the CMSSW version name, for instance `hgc-tpg-CMSSW_16_0_1. :warning: The PR validation scripts extract the release version from the branch name, so this pattern must be respected for the validation to work.
 
 
 ### Integration branches
@@ -93,7 +93,7 @@ When the PR is merged, it is automatically flagged as `Ready for integration` in
 ## Backporting and releasing
 New development integrated in the development branch are backported to the latest release branches. This is done through backport PRs onto the release branches. Having backport PRs is useful in order run the validation with the release branch and check that there is no incompatibility between the new code and what is in the release branch.
 
-Backport PRs are conventionally identified with a flag in the PR title, e.g. `[Backport 12_5_2_patch1]`, and with the PR label `backport`. Backport PRs don't need to be included in the Github project `HGCAL TPG Simulation Developments` as the original PRs are already tracked there.
+Backport PRs are conventionally identified with a flag in the PR title, e.g. `[Backport CMSSW_16_0_1]`, and with the PR label `backport`. Backport PRs don't need to be included in the Github project `HGCAL TPG Simulation Developments` as the original PRs are already tracked there.
 
 Once the backport PR is validated it can be integrated into the release branch, which is done with **rebasing in order to keep the commit history linear** (using `Rebase and merge` in Github). Then a new version tag is created on the release branch and the user installation recipe is updated in the Twiki page.  
 

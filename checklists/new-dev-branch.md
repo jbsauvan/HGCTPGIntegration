@@ -10,6 +10,7 @@ Replacing `<NEW_RELEASE_NAME>` with the name of the new CMSSW release on which t
 -  One can simply do a `rebase-topic`
 ```bash
 git cms-rebase-topic hgc-tpg:hgc-tpg-devel-<OLD_RELEASE_NAME>
+git checkout -b hgc-tpg-devel-$CMSSW_VERSION
 ```
 Replacing `<OLD_RELEASE_NAME>` with the name of the old CMSSW release on which the development branch is currently based.
 

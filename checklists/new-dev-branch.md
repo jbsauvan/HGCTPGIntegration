@@ -1,15 +1,17 @@
 ### Install the working area
 ```bash
-cmsrel PRERELEASE_NAME
-cd PRERELEASE_NAME/src
+cmsrel <NEW_RELEASE_NAME>
+cd <NEW_RELEASE_NAME>/src
 cmsenv
 ```
+Replacing `<NEW_RELEASE_NAME>` with the name of the new CMSSW release on which the development branch will be rebased.
 
 ### If nothing has been integrated in the new release compared to the old one
 -  One can simply do a `rebase-topic`
 ```bash
-git cms-rebase-topic hgc-tpg:hgc-tpg-devel-$CMSSW_VERSION
+git cms-rebase-topic hgc-tpg:hgc-tpg-devel-<OLD_RELEASE_NAME>
 ```
+Replacing `<OLD_RELEASE_NAME>` with the name of the old CMSSW release on which the development branch is currently based.
 
 ### Otherwise the commits need to be picked manually
 - Initialize the repository
@@ -51,6 +53,7 @@ cmsRun testHGCalL1T_multialgo_V16_cfg.py
 ```
 - Push the new development branch and make it the default branch
 ```bash
+git remote add hgctpg git@github.com:hgc-tpg/cmssw.git # if not done already
 git push hgctpg hgc-tpg-devel-$CMSSW_VERSION
 ```
 
